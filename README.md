@@ -4,7 +4,7 @@
 </div>
                                                                                   
 
-Jobly is a personal project I made while learning Node.js and React.js. It focuses on a backend server made with Express and a front end made with React. 
+Jobly is a project made while learning Node.js and React.js. It focuses on a backend server made with Express and a front end made with React. 
 This project is inspired by jobsearching applications and was built to be a sudo clone. 
 
 ## Deployed Website
