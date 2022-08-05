@@ -11,6 +11,8 @@ This project is inspired by jobsearching applications and was built to be a sudo
 
 You can view the deployed website here: [Jobly](https://mw-jobly.surge.sh/).
 
+The backend code can be found here: [Jobly Backend](https://github.com/WinterMaiya/Jobly-Backend)
+
 ## Getting Started:
 ### Create a username and password
 *Your password is hashed using a bcrypt algorithm.
