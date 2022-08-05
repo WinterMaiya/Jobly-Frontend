@@ -19,34 +19,33 @@ import { useRef, useState, useEffect } from "react";
  *     {myMsgFlag ? <p>Oh No!</p> : null}
  *   )
  *
- * While this hook was written for showing flash messages, it's really just
- * a hook for timed state clearing -- this same pattern could be useful for
- * other tasks.
- *
  */
 
 function useTimedMessage(timeInMsec = 3000) {
-  const [active, setActive] = useState(false);
+	const [active, setActive] = useState(false);
 
-  const messageShownRef = useRef(false);
+	const messageShownRef = useRef(false);
 
-  useEffect(
-      function showSavedMessage() {
-        console.debug(
-            "useTimedMessage useEffect showSavedMessage", "active=", active);
+	useEffect(
+		function showSavedMessage() {
+			console.debug(
+				"useTimedMessage useEffect showSavedMessage",
+				"active=",
+				active
+			);
 
-        if (active && !messageShownRef.current) {
-          messageShownRef.current = true;
-          setTimeout(function removeMessage() {
-            setActive(false);
-            messageShownRef.current = false;
-          }, timeInMsec);
-        }
-      },
-      [active, timeInMsec],
-  );
+			if (active && !messageShownRef.current) {
+				messageShownRef.current = true;
+				setTimeout(function removeMessage() {
+					setActive(false);
+					messageShownRef.current = false;
+				}, timeInMsec);
+			}
+		},
+		[active, timeInMsec]
+	);
 
-  return [active, setActive];
+	return [active, setActive];
 }
 
 export default useTimedMessage;

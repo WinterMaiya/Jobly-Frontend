@@ -5,33 +5,33 @@ import { UserProvider } from "../testUtils";
 import PrivateRoute from "./PrivateRoute";
 
 it("renders without crashing", function () {
-  render(
-      <MemoryRouter>
-        <UserProvider>
-          <PrivateRoute />
-        </UserProvider>
-      </MemoryRouter>,
-  );
+	render(
+		<MemoryRouter>
+			<UserProvider>
+				<PrivateRoute />
+			</UserProvider>
+		</MemoryRouter>
+	);
 });
 
 it("matches snapshot", function () {
-  const { asFragment } = render(
-      <MemoryRouter>
-        <UserProvider>
-          <PrivateRoute />
-        </UserProvider>
-      </MemoryRouter>,
-  );
-  expect(asFragment()).toMatchSnapshot();
+	const { asFragment } = render(
+		<MemoryRouter>
+			<UserProvider>
+				<PrivateRoute />
+			</UserProvider>
+		</MemoryRouter>
+	);
+	expect(asFragment()).toMatchSnapshot();
 });
 
 it("matches snapshot when logged out", function () {
-  const { asFragment } = render(
-      <MemoryRouter>
-        <UserProvider currentUser={null}>
-          <PrivateRoute />
-        </UserProvider>
-      </MemoryRouter>,
-  );
-  expect(asFragment()).toMatchSnapshot();
+	const { asFragment } = render(
+		<MemoryRouter>
+			<UserProvider currentUser={null}>
+				<PrivateRoute />
+			</UserProvider>
+		</MemoryRouter>
+	);
+	expect(asFragment()).toMatchSnapshot();
 });
